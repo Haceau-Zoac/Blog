@@ -138,7 +138,7 @@ Console.WriteLine(string.Format("{0}, {1}!", "Hello", "world"));
 
 或者：
 
-```
+```c#
 using System;
 
 string name = "Haceau-Zoac";
