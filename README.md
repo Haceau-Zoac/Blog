@@ -1,6 +1,10 @@
 # Blog
 Haceau Blogs!
 
+欢迎 Issues（想看我写些什么？） 或 PR（我哪里写错了？）
+
+希望 Watch（关注一下嘛！）还有 Star（只 Watch 不 Star 哪行啊？）
+
 ## Table Of Contents
 * [Blog List](#Blog-List)
 * [LICENSE](#LICENSE)
