@@ -171,7 +171,7 @@ Console.WriteLine(hello, 5, 3);
 
 诶，你有没有发现他们结尾会自动换行啊，我不想换行咋办？好整，用 Write！
 
-```
+```c#
 using System;
 
 Console.Write("Enter age: ");
