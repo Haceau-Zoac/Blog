@@ -1,9 +1,9 @@
 # Blog
 Haceau Blogs!
 
-»¶Ó­ Issues£¨Ïë¿´ÎÒÐ´Ð©Ê²Ã´£¿£© »ò PR£¨ÎÒÄÄÀïÐ´´íÁË£¿£©
+æ¬¢è¿Ž Issuesï¼ˆæƒ³çœ‹æˆ‘å†™äº›ä»€ä¹ˆï¼Ÿï¼‰ æˆ– PRï¼ˆæˆ‘å“ªé‡Œå†™é”™äº†ï¼Ÿï¼‰
 
-Ï£Íû Watch£¨¹Ø×¢Ò»ÏÂÂï£¡£©»¹ÓÐ Star£¨Ö» Watch ²» Star ÄÄÐÐ°¡£¿£©
+å¸Œæœ› Watchï¼ˆå…³æ³¨ä¸€ä¸‹å˜›ï¼ï¼‰è¿˜æœ‰ Starï¼ˆåª Watch ä¸ Star å“ªè¡Œå•Šï¼Ÿï¼‰
 
 ## Table Of Contents
 * [Blog List](#Blog-List)
@@ -12,7 +12,7 @@ Haceau Blogs!
 ## Blog List
 ### .NET
 #### C#
-###### [System.Console Ê¹ÓÃÏê½â](dotnet\csharp\System.ConsoleÊ¹ÓÃÏê½â.md)
+###### [System.Console ä½¿ç”¨è¯¦è§£](dotnet/csharp/System.Consoleä½¿ç”¨è¯¦è§£.md)
 
 ## LICENSE
-´ËÏîÄ¿Ê¹ÓÃ MIT License£¬Ïê¼û [LICENSE](LICENSE)¡£
+æ­¤é¡¹ç›®ä½¿ç”¨ MIT Licenseï¼Œè¯¦è§ [LICENSE](LICENSE)ã€‚
