@@ -7,6 +7,8 @@ Haceau Blogs!
 
 ## Table Of Contents
 * [Blog List](#Blog-List)
+  * [.NET](#.NET)
+    * [C#](#C#)
 * [LICENSE](#LICENSE)
 
 ## Blog List
