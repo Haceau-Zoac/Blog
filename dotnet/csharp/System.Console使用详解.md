@@ -7,6 +7,17 @@ System.Console 巨好用！此篇文章介绍它的大多数用法~
   * [WriteLine](#WriteLine)
   * [Write](Write)
   * [Clear](Clear)
+  * [ConsoleColor](#ConsoleColor)
+  * [ForegroundColor](#ForegroundColor)
+  * [BackgroundColor](#BackgroundColor)
+  * [ResetColor](#ResetColor)
+  * [SetOut](#SetOut)
+  * [SetError](#SetError)
+  * [BufferWidth](#BufferWidth)
+  * [BufferHeight](#BufferHeight)
+  * [WindowWidth](#WindowWidth)
+  * [WindowHeight](#WindowHeight)
+  * [SetCursorPosition](#SetCursorPosition)
 * [读取内容](#读取内容)
   * [ReadLine](#ReadLine)
   * [Read](#Read)
@@ -205,7 +216,204 @@ Hello, Haceau! You're 12 years old!
 
 ### Clear
 
-TODO
+诶那我想把屏幕都清空咋办？
+
+Clear 上！
+
+```c#
+using System;
+
+Console.WriteLine("qwq");
+Console.ReadKey(true);
+Console.Clear();
+Console.WriteLine("awa");
+```
+
+刚开始会输出 "qwq"，但当按下一个键之后屏幕就会被清空，变为 "awa"~
+
+上面的示例其实可以简化：
+
+```c#
+using static System.Console;
+
+WriteLine("qwq");
+ReadKey(true);
+Clear();
+WriteLine("awa");
+```
+
+### ConsoleColor
+
+这个枚举就是表示控制台的各种颜色的~
+
+共 15 种！
+
+### ForegroundColor
+
+设置控制台前景色！
+
+之前的文本不会受到影响，之后的文本就是这个色的辣~
+
+试试：
+
+```c#
+Console.WriteLine("default");
+Console.ForegroundColor = ConsoleColor.Red;
+Console.WriteLine("red~");
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("green!");
+```
+
+可以看到，控制台颜色改变了！default 默认控制台颜色，red~ 红色， green! 绿色！
+
+### BackgroundColor
+
+设置控制台背景色！
+
+之前的文本同样不会受到影响，之后文本的背景色就是这个颜色~
+
+试试：
+
+```c#
+Console.WriteLine("default");
+Console.BackgroundColor = ConsoleColor.Red;
+Console.WriteLine("red~");
+Console.BackgroundColor = ConsoleColor.Yellow;
+Console.WriteLine("green!");
+```
+
+### ResetColor
+
+颜色更改全局，以后的都是这个色了，我想让一个语句是这个颜色其他都不是咋弄？来试试：
+
+```c#
+Console.ForegroundColor = ConsoleColor.Red;
+Console.WriteLine("此句前景色为红！");
+Console.ResetColor();
+Console.WriteLine("恢复默认值~");
+```
+
+可以看到，"此句前景色为红！"是红色的，"恢复默认值~"又是默认的颜色qwq
+
+### SetOut
+
+设置输出流！
+
+也就是说，可以让控制台输出到文件（
+
+```c#
+using System;
+using System.IO;
+
+FileStream fs = new("test.txt", FileMode.OpenOrCreate);
+StreamWriter sr = new(fs);
+Console.SetOut(sr);
+Console.WriteLine("Hello!");
+```
+
+控制台并没有输出 "Hello!"，而是输出到文件 "test.txt" 去了！
+
+### SetError
+
+设置错误流~
+
+用法和 SetOut 相似，此处就不讲了owo
+
+### BufferWidth
+
+缓冲区宽度！
+
+那什么是缓冲区？缓冲区就是在内存中预留的存储空间，用来缓存输入 or 输出的数据
+
+```c#
+for (int i = 0; i < Console.BufferHeight; ++i)
+	Console.Write('a');
+Console.Write('a');
+```
+
+正好输出了一行 'a' 再加上多一个
+
+也可以这么写：
+
+```c#
+for (int i = 0; i <= Console.BufferHeight; ++i)
+	Console.Write('a');
+```
+
+缓冲区宽度还可以设置~
+
+!!! 警告：Console.BufferWidth 的设置操作只可在 Windows 平台执行
+
+```c#
+Console.BufferWidth = 100;
+for (int i = 0; i <= 100; ++i)
+    Console.Write('a');
+```
+
+ Windows 平台下，打印了一行零一个 'a'，在其他平台下，打印了 PlatformNotSupportedException 的错误信息
+
+来个 if 判断：
+
+```c#
+if (OperatingSystem.IsWindows())
+    Console.BufferWidth = 100;
+for (int i = 0; i <= 100; ++i)
+    Console.Write('a');if ()
+```
+
+### BufferHeight
+
+和 BufferWidth 相对的，缓冲区高度~
+
+!!! 警告：Console.BufferHeight 的设置操作只可在 Windows 平台执行
+
+### WindowWidth
+
+窗口宽度awa
+
+控制台的窗口和缓冲区可能一样大，也可能不一样大
+
+窗口也就是控制台，有可以拖拽的边框的那个，不是缓冲区
+
+```c#
+Console.WriteLine("qwq");
+Console.WriteLine(Console.WindowWidth);
+```
+
+可能输出：
+
+```
+qwq
+80
+```
+
+当然，窗口宽度也能设置！
+
+!!! 警告：Console.WindowWidth 的设置操作只可在 Windows 平台执行
+
+```
+Console.WindowWidth = 100;
+```
+
+Windows 平台下，窗口的宽度变为了 100，在其他平台下，打印了 PlatformNotSupportedException 的错误信息
+
+### WindowHeight
+
+和 WindowWidth 相对的，窗口高度~
+
+!!! 警告：Console.WindowHeight 的设置操作只可在 Windows 平台执行
+
+### SetCursorPosition
+
+有时你不想从上至下从左至右按顺序输出怎么办？用 SetCursorPosition 把光标位置改了吧！
+
+```c#
+Console.WriteLine("qwq");
+Console.SetCursorPosition(20, 10);
+Console.WriteLine("At line 10");
+```
+
+"qwq" 正常输出，但是 "At line 10" 却是在第 10 行第 20 个字符处输出的，就是 Console.SetCurorPosition 做的
 
 ## 读取内容
 
