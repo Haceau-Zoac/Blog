@@ -21,6 +21,12 @@ System.Console 巨好用！此篇文章介绍它的大多数用法~
 * [读取内容](#读取内容)
   * [ReadLine](#ReadLine)
   * [Read](#Read)
+  * [ConsoleKey](#ConsoleKey)
+  * [ConsoleModifiers](#ConsoleModifiers)
+  * [ConsoleKeyInfo](#ConsoleKeyInfo)
+    * [Key](#Key)
+    * [KeyChar](#KeyChar)
+    * [Modifiers](#Modifiers)
   * [ReadKey](#ReadKey)
 
 ## 打印内容
@@ -419,12 +425,88 @@ Console.WriteLine("At line 10");
 
 ### ReadLine
 
-TODO
+ReadLine 就是让你输入一行，然后返回个字符串（你输入的）
+
+比如
+
+```c#
+string str = Console.ReadLine();
+Console.WriteLine("输入的是{0}", str);
+```
+
+输出：
+
+```text
+`qwq`
+输入的是qwq
+```
 
 ### Read
 
-TODO
+从控制台一个一个的读取字符
+
+比如
+
+```c#
+for (int i = 0; i < 10; ++i)
+{
+    x = Console.Read();
+    Console.WriteLine($"{x} is {Convert.ToChar(x)}");
+}
+```
+
+输出
+
+```text
+`awa`
+97 is a
+119 is w
+97 is a
+```
+
+### ConsoleKey
+
+表示控制台上所有键的枚举！
+
+### ConsoleModifiers
+
+表示 Shift Alt 还有 Ctrl 修改键，可以组合~（用 | ）
+
+### ConsoleKeyInfo
+
+表示按下的键，咋表示呢？
+
+#### Key
+
+他表示你按下的键，是个 ConsoleKey
+
+#### KeyChar
+
+他也表示你按下的键，但是是个 char
+
+#### Modifiers
+
+他表示你同时按下了什么修改键，是个 ConsoleModifiers 类型的
 
 ### ReadKey
 
-TODO
+他从控制台读取一个键并且返回 ConsoleKeyInfo 类型
+
+比如
+
+```c#
+ConsoleKeyInfo info  = Console.ReadKey();
+Console.WriteLine($"Key is {info.KeyChar}");
+```
+
+输出
+
+```text
+`Hello`
+Key is H
+key is e
+Key is l
+Key is l
+Key is o
+```
+
