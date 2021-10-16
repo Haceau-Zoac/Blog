@@ -5,16 +5,12 @@ Haceau Blogs!
 
 希望 Watch（关注一下嘛！）还有 Star（只 Watch 不 Star 哪行啊？）
 
-## Table Of Contents
-* [Blog List](#Blog-List)
-  * [C#](#C#)
-* [LICENSE](#LICENSE)
+## C#
+### [System.Console 使用详解](csharp/System.Console使用详解.md)
 
-## Blog List
-
-### C#
-
-###### [System.Console 使用详解](csharp/System.Console使用详解.md)
+## C++
+### Tutorial
+#### [001-Hello, world!](cplusplus/tutorial/001-hello.md)
 
 ## LICENSE
 此项目使用 MIT License，详见 [LICENSE](LICENSE)。
